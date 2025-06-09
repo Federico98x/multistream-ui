@@ -1,1 +1,0 @@
-import{_ as o}from"./index-qsiXjH0d.js";import{c as t,e as s,f as r}from"./vendor-y_82X-Bd.js";import"./chat-C7wxn1HZ.js";import"./charts-YVFUOROj.js";const a={},n={class:"about"};function c(i,e){return r(),t("div",n,e[0]||(e[0]=[s("h1",null,"This is an about page",-1)]))}const l=o(a,[["render",c]]);export{l as default};
