@@ -1,0 +1,43 @@
+name: multistream-ui
+services:
+- name: web
+  source_dir: /
+  github:
+    repo: your-username/multistream-ui
+    branch: main
+    deploy_on_push: true
+  run_command: npm run preview
+  environment_slug: node-js
+  instance_count: 1
+  instance_size_slug: apps-s-1vcpu-0.5gb
+  build_command: npm install && npm run build
+  http_port: 4173
+  envs:
+  - key: NODE_ENV
+    value: production
+  - key: VITE_API_URL
+    value: ${API_URL}
+  - key: VITE_WS_URL
+    value: ${WS_URL}
+  routes:
+  - path: /
+    preserve_path_prefix: false
+static_sites:
+- name: frontend
+  source_dir: /
+  github:
+    repo: your-username/multistream-ui
+    branch: main
+    deploy_on_push: true
+  build_command: npm install && npm run build
+  output_dir: /dist
+  index_document: index.html
+  error_document: 404.html
+  envs:
+  - key: VITE_API_URL
+    value: ${API_URL}
+  - key: VITE_WS_URL
+    value: ${WS_URL}
+  routes:
+  - path: /
+    preserve_path_prefix: false

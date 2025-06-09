@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .glass {
+    @apply border;
+    backdrop-filter: blur(24px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .glass-dark {
+    @apply border;
+    backdrop-filter: blur(24px);
+    background-color: rgba(31, 41, 55, 0.5);
+    border-color: rgba(75, 85, 99, 0.5);
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900;
+  }
+  
+  .chat-message {
+    @apply p-2 rounded-lg mb-1 transition-all duration-200;
+  }
+  
+  .chat-message:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .platform-badge {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
